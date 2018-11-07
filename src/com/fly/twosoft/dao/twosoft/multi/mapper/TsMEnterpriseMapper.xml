@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fly.twosoft.dao.twosoft.multi.mapper.TsMEnterpriseMapper">
+
+	<resultMap id="BaseResultMap"
+		type="com.fly.twosoft.dao.twosoft.multi.model.TsMEnterprise"
+		extends="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.BaseResultMap">
+		<result property="year" column="year__" jdbcType="INTEGER" />
+		<result property="count" column="count__" jdbcType="INTEGER" />
+		<result property="softMoney" column="soft_money__" jdbcType="INTEGER" />
+		<result property="softInsertMoney" column="soft_insert_money__"
+			jdbcType="INTEGER" />
+		<result property="softIntegrateMoney" column="soft_integrate_money__"
+			jdbcType="INTEGER" />
+		<result property="saleMoney" column="sale_money__" jdbcType="INTEGER" />
+		<result property="personNum" column="person_num__" jdbcType="INTEGER" />
+		<result property="developeMoney" column="develope_money__" jdbcType="INTEGER" />
+		<result property="allMoney" column="all_money__" jdbcType="INTEGER" />
+		<result property="patentNum" column="patent_num__" jdbcType="INTEGER" />
+		<result property="writingNum" column="writing_num__" jdbcType="INTEGER" />
+		<result property="profitAllMoney" column="profit_all_money__" jdbcType="INTEGER" />
+		<result property="profitMoney" column="profit_money__" jdbcType="INTEGER" />
+	</resultMap>
+
+	<update id="updateByExampleSelectiveNull" parameterType="map">
+		update TS_ENTERPRISE
+		<set>
+			<if test="record.id != null">
+				ID = #{record.id,jdbcType=VARCHAR},
+			</if>
+			<if test="record.certificatePreNo != null">
+				CERTIFICATE_PRE_NO =
+				#{record.certificatePreNo,jdbcType=VARCHAR},
+			</if>
+			<if test="record.batchId != null">
+				BATCH_ID = #{record.batchId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.certificateNo != null">
+				CERTIFICATE_NO =
+				#{record.certificateNo,jdbcType=VARCHAR},
+			</if>
+			<if test="record.name != null">
+				NAME = #{record.name,jdbcType=VARCHAR},
+			</if>
+			<if test="record.creditNo != null">
+				CREDIT_NO = #{record.creditNo,jdbcType=VARCHAR},
+			</if>
+			<if test="record.registerDate != null">
+				REGISTER_DATE =
+				#{record.registerDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.address != null">
+				ADDRESS = #{record.address,jdbcType=VARCHAR},
+			</if>
+			<if test="record.post != null">
+				POST = #{record.post,jdbcType=VARCHAR},
+			</if>
+			<if test="record.linkMan != null">
+				LINK_MAN = #{record.linkMan,jdbcType=VARCHAR},
+			</if>
+			<if test="record.telephone != null">
+				TELEPHONE = #{record.telephone,jdbcType=VARCHAR},
+			</if>
+			<if test="record.mobile != null">
+				MOBILE = #{record.mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="record.email != null">
+				EMAIL = #{record.email,jdbcType=VARCHAR},
+			</if>
+			<if test="record.isStock != null">
+				IS_STOCK = #{record.isStock,jdbcType=SMALLINT},
+			</if>
+			<if test="record.stockNo != null">
+				STOCK_NO = #{record.stockNo,jdbcType=VARCHAR},
+			</if>
+			<if test="record.allMoney != null">
+				ALL_MONEY = #{record.allMoney,jdbcType=DOUBLE},
+			</if>
+			<if test="record.saleMoney != null">
+				SALE_MONEY = #{record.saleMoney,jdbcType=DOUBLE},
+			</if>
+			<if test="record.profitAllMoney != null">
+				PROFIT_ALL_MONEY =
+				#{record.profitAllMoney,jdbcType=DOUBLE},
+			</if>
+			<if test="record.profitMoney != null">
+				PROFIT_MONEY = #{record.profitMoney,jdbcType=DOUBLE},
+			</if>
+			<if test="record.outMoney != null">
+				OUT_MONEY = #{record.outMoney,jdbcType=DOUBLE},
+			</if>
+		
+			<if test="record.developeMoney != null">
+				DEVELOPE_MONEY = #{record.developeMoney,jdbcType=DOUBLE},
+			</if>
+			<if test="record.patentNum != null">
+				PATENT_NUM = #{record.patentNum,jdbcType=INTEGER},
+			</if>
+			<if test="record.writingNum != null">
+				WRITING_NUM = #{record.writingNum,jdbcType=INTEGER},
+			</if>
+			<if test="record.business != null">
+				BUSINESS = #{record.business,jdbcType=VARCHAR},
+			</if>
+			<if test="record.products != null">
+				PRODUCTS = #{record.products,jdbcType=VARCHAR},
+			</if>
+			<if test="record.productNames != null">
+				PRODUCT_NAMES = #{record.productNames,jdbcType=VARCHAR},
+			</if>
+			<if test="record.productOther != null">
+				PRODUCT_OTHER = #{record.productOther,jdbcType=VARCHAR},
+			</if>
+			<if test="record.isIso != null">
+				IS_ISO = #{record.isIso,jdbcType=SMALLINT},
+			</if>
+			<if test="record.isCmm != null">
+				IS_CMM = #{record.isCmm,jdbcType=SMALLINT},
+			</if>
+			<if test="record.cmmLevel != null">
+				CMM_LEVEL = #{record.cmmLevel,jdbcType=SMALLINT},
+			</if>
+			<if test="record.isSysIntegrate != null">
+				IS_SYS_INTEGRATE =
+				#{record.isSysIntegrate,jdbcType=SMALLINT},
+			</if>
+			<if test="record.sysIntegrateLevel != null">
+				SYS_INTEGRATE_LEVEL =
+				#{record.sysIntegrateLevel,jdbcType=SMALLINT},
+			</if>
+			<if test="record.isCredit != null">
+				IS_CREDIT = #{record.isCredit,jdbcType=SMALLINT},
+			</if>
+			<if test="record.creditLevel != null">
+				CREDIT_LEVEL = #{record.creditLevel,jdbcType=VARCHAR},
+			</if>
+			<if test="record.otherQualification != null">
+				OTHER_QUALIFICATION =
+				#{record.otherQualification,jdbcType=VARCHAR},
+			</if>
+			<if test="record.personNum != null">
+				PERSON_NUM = #{record.personNum,jdbcType=INTEGER},
+			</if>
+			<if test="record.developerNum != null">
+				DEVELOPER_NUM = #{record.developerNum,jdbcType=INTEGER},
+			</if>
+			<if test="record.orgId != null">
+				ORG_ID = #{record.orgId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.orgName != null">
+				ORG_NAME = #{record.orgName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.orgFullName != null">
+				ORG_FULL_NAME = #{record.orgFullName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.orgPath != null">
+				ORG_PATH = #{record.orgPath,jdbcType=VARCHAR},
+			</if>
+			SHOW_BEGIN_TIME = #{record.showBeginTime,jdbcType=TIMESTAMP},
+			SHOW_END_TIME = #{record.showEndTime,jdbcType=TIMESTAMP},
+			<if test="record.showState != null">
+				SHOW_STATE = #{record.showState,jdbcType=SMALLINT},
+			</if>
+			SHOW_INDEX = #{record.showIndex,jdbcType=INTEGER},
+			<if test="record.showId != null">
+				SHOW_ID = #{record.showId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.deleteState != null">
+				DELETE_STATE = #{record.deleteState,jdbcType=SMALLINT},
+			</if>
+			<if test="record.createTime != null">
+				CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.createPersonId != null">
+				CREATE_PERSON_ID =
+				#{record.createPersonId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.createPersonName != null">
+				CREATE_PERSON_NAME =
+				#{record.createPersonName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.updateTime != null">
+				UPDATE_TIME = #{record.updateTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.updatePersonId != null">
+				UPDATE_PERSON_ID =
+				#{record.updatePersonId,jdbcType=VARCHAR},
+			</if>
+			<if test="record.updatePersonName != null">
+				UPDATE_PERSON_NAME =
+				#{record.updatePersonName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.remark != null">
+				REMARK = #{record.remark,jdbcType=VARCHAR},
+			</if>
+			<if test="record.verifyState != null">
+				VERIFY_STATE = #{record.verifyState,jdbcType=SMALLINT},
+			</if>
+			<if test="record.verifyResult != null">
+				VERIFY_RESULT = #{record.verifyResult,jdbcType=VARCHAR},
+			</if>
+			VERIFY_TIME = #{record.verifyTime,jdbcType=TIMESTAMP},
+
+			<if test="record.quickState != null">
+				QUICK_STATE = #{record.quickState,jdbcType=SMALLINT},
+			</if>
+			<if test="record.quickApplyTime != null">
+				QUICK_APPLY_TIME =
+				#{record.quickApplyTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.quickRemark != null">
+				QUICK_REMARK = #{record.quickRemark,jdbcType=VARCHAR},
+			</if>
+			<if test="record.quickFileName != null">
+				QUICK_FILE_NAME =
+				#{record.quickFileName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.effectiveEndTime != null">
+				EFFECTIVE_END_TIME =
+				#{record.effectiveEndTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.printState != null">
+				PRINT_STATE = #{record.printState,jdbcType=SMALLINT},
+			</if>
+			<if test="record.printTime != null">
+				PRINT_TIME = #{record.printTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="record.printRemark != null">
+				PRINT_REMARK = #{record.printRemark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		<if test="_parameter != null">
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.Update_By_Example_Where_Clause" />
+		</if>
+	</update>
+	<select id="selectOrgIdAndCount" resultMap="BaseResultMap">
+		<if test="orderByClause != null">
+			select * from (
+		</if>
+		select ORG_ID, count(id) count__
+		from TS_ENTERPRISE
+		<if test="_parameter != null">
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.Example_Where_Clause" />
+		</if>
+		group by org_id
+		order by org_id
+		<if test="orderByClause == null">
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.mysqlSuffix" />
+		</if>
+		<if test="orderByClause != null">
+			) temp
+			order by ${orderByClause}
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.mysqlSuffix" />
+		</if>
+	</select>
+
+
+	<select id="selectOrgIdYearCount" resultMap="BaseResultMap">
+<![CDATA[
+select distinct
+  ORG_ID,
+  year__,
+  count(id) as
+  count__
+  from
+  (select
+      id,
+      ORG_ID,
+      extract(year from apply_time) as
+      year__
+    from
+    ts_enterprise
+]]>
+		<if test="_parameter != null">
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.Example_Where_Clause" />
+		</if>
+		) temp__
+		group by org_id, year__
+		order by org_id
+		asc, year__ desc
+		<include
+			refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.mysqlSuffix" />
+	</select>
+	<select id="selectYearCountMoney" resultMap="BaseResultMap">
+<![CDATA[
+select distinct
+  year__,
+  count(id) count__,
+  sum(soft_money) soft_money__,
+  sum(soft_insert_money) soft_insert_money__,
+  sum(soft_integrate_money) soft_integrate_money__
+  from
+  (select
+      id,
+      extract(year from apply_time)
+      year__,
+      soft_money,
+      soft_insert_money,
+      soft_integrate_money
+    from
+    ts_enterprise
+]]>
+		<if test="_parameter != null">
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.Example_Where_Clause" />
+		</if>
+		) temp__
+		group by year__
+		order by year__ desc
+		<include
+			refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.mysqlSuffix" />
+	</select>
+	<select id="selectOrgIdAndCountMoney" resultMap="BaseResultMap">
+<![CDATA[
+select distinct
+   org_id,
+  count(id) count__,
+  sum(sale_money) sale_money__,
+  sum(person_num) person_num__,
+  sum(develope_money) develope_money__,
+  sum(all_money) all_money__,
+  sum(profit_all_money) profit_all_money__,
+  sum(profit_money) profit_money__,
+  sum(patent_num) patent_num__,
+  sum(writing_num) writing_num__
+  from
+  (select
+      id,
+      org_id,
+      sale_money,
+      person_num,
+      develope_money,
+      all_money,
+      profit_all_money,
+      profit_money,
+      patent_num,
+      writing_num
+    from
+    ts_enterprise
+]]>
+		<if test="_parameter != null">
+			<include
+				refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.Example_Where_Clause" />
+		</if>
+		) temp__
+		group by org_id
+		order by org_id
+		<include
+			refid="com.fly.twosoft.dao.twosoft.single.mapper.TsEnterpriseMapper.mysqlSuffix" />
+	</select>
+</mapper>
